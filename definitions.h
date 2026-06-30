@@ -1,0 +1,33 @@
+enum class parameter_type : uint32_t
+{
+	VOID = 0x00,
+	BOOL = 0x01,
+	INT = 0x02,
+	FLOAT = 0x03,
+	STRING = 0x04,
+	TEXTURE = 0x05,
+	TEXTURE_1D = 0x06,
+	TEXTURE_2D = 0x07,
+	TEXTURE_3D = 0x08,
+	TEXTURE_CUBE = 0x09,
+	SAMPLER = 0x0A,
+	SAMPLER_1D = 0x0B,
+	SAMPLER_2D = 0x0C,
+	SAMPLER_3D = 0x0D,
+	SAMPLER_CUBE = 0x0E,
+	PIXEL_SHADER = 0x0F,
+	VERTEX_SHADER = 0x10,
+	PIXEL_FRAGMENT = 0x11,
+	VERTEX_FRAGMENT = 0x12,
+	UNSUPPORTED = 0x13
+};
+
+enum class DX9_parameter_class : uint32_t
+{
+	SCALAR = 0x00,
+	VECTOR = 0x01,
+	MATRIX_ROWS = 0x02,
+	MATRIX_COLUMNS = 0x03,
+	OBJECT = 0x04,
+	STRUCT = 0x05
+};

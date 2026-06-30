@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="definitions.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="XenosRecomp\dxcompiler.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

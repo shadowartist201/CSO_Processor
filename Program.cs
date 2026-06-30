@@ -1,9 +1,11 @@
 ﻿using System.Diagnostics;
+//#include "definitions.h";
 
 class Program
 {
     static void Main(string[] args) //input file, output file
     {
+
         if (args.Length < 2)
         {
             Console.WriteLine("Usage: <input file> <output file>");
@@ -11,8 +13,17 @@ class Program
         }
 
         string filePath = args[0];
-        byte[] targetBytes = new byte[] { 0x10, 0x2A, 0x11, 0x00 }; // Example: replace with your sequence
+
         byte[] fileBytes = File.ReadAllBytes(filePath);
+
+        int headerSize = BitConverter.ToInt32(fileBytes, 19);
+        byte[] headerBytes = new byte[headerSize];
+        Array.Copy(fileBytes, 23, headerBytes, 0, headerSize);
+
+
+
+        byte[] targetBytes = new byte[] { 0x10, 0x2A, 0x11, 0x00 };
+
         int index = FindSequence(fileBytes, targetBytes);
 
         if (index >= 0)
